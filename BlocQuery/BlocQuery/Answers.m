@@ -11,4 +11,13 @@
 
 @implementation Answers
 
+-(id) initWithParseObject: (PFObject *) parseObject {
+    if (self) {
+        self.answer = parseObject[@"text"];
+        self.votes = (NSInteger)parseObject[@"votes"];
+    }
+    
+    return self;
+}
+
 @end

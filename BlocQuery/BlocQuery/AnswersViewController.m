@@ -45,11 +45,7 @@
         if (!error) {
             for (PFObject *object in objects) {
                 
-                Answers *answers = [Answers new];
-                
-                //[tempArray addObject:object[@"text"]];
-                answers.answer = object[@"text"];
-                answers.votes = (NSInteger)object[@"votes"];
+                Answers *answers = [[Answers alloc] initWithParseObject:object];
                 [tempArray addObject:answers];
                 
             }

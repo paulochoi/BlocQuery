@@ -42,13 +42,8 @@
         
         if (!error) {
             for (PFObject *object in objects) {
-                //NSLog(@"%@" , object[@"text"]);
                 
-                Questions *question = [Questions new];
-                
-                //[tempArray addObject:object[@"text"]];
-                question.question = object[@"text"];
-                question.questionID = object.objectId;
+                Questions *question = [[Questions alloc] initWithParseObject:object];
                 [tempArray addObject:question];
             }
         } else {

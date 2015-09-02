@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *questionID;
 
--(id) initWithParseObject: (Parse *) parseObject;
+-(id) initWithParseObject: (PFObject *) parseObject;
 
 
 @end

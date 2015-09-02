@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		731543331B8F8833004506D4 /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543321B8F8833004506D4 /* QuestionsTableViewController.m */; };
+		731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */; };
+		731543411B94C62F004506D4 /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543401B94C62F004506D4 /* Questions.m */; };
+		731543441B94E0D9004506D4 /* AnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543431B94E0D9004506D4 /* AnswersViewController.m */; };
+		7315434A1B950139004506D4 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543491B950139004506D4 /* Answers.m */; };
+		7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */; };
+		73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */; };
 		73E77A3A1B8CF0E300864597 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E77A391B8CF0E300864597 /* main.m */; };
 		73E77A3D1B8CF0E300864597 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E77A3C1B8CF0E300864597 /* AppDelegate.m */; };
-		73E77A401B8CF0E300864597 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E77A3F1B8CF0E300864597 /* ViewController.m */; };
 		73E77A431B8CF0E300864597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E77A411B8CF0E300864597 /* Main.storyboard */; };
 		73E77A451B8CF0E300864597 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73E77A441B8CF0E300864597 /* Images.xcassets */; };
 		73E77A481B8CF0E300864597 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73E77A461B8CF0E300864597 /* LaunchScreen.xib */; };
@@ -40,15 +44,23 @@
 
 /* Begin PBXFileReference section */
 		0BF0CF4118C0F2162CAF1307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		731543311B8F8833004506D4 /* QuestionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewController.h; sourceTree = "<group>"; };
-		731543321B8F8833004506D4 /* QuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewController.m; sourceTree = "<group>"; };
+		731543341B8F8BFF004506D4 /* QuestionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewCell.h; sourceTree = "<group>"; };
+		731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewCell.m; sourceTree = "<group>"; };
+		7315433F1B94C62F004506D4 /* Questions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
+		731543401B94C62F004506D4 /* Questions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questions.m; sourceTree = "<group>"; };
+		731543421B94E0D9004506D4 /* AnswersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersViewController.h; sourceTree = "<group>"; };
+		731543431B94E0D9004506D4 /* AnswersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersViewController.m; sourceTree = "<group>"; };
+		731543481B950139004506D4 /* Answers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answers.h; sourceTree = "<group>"; };
+		731543491B950139004506D4 /* Answers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answers.m; sourceTree = "<group>"; };
+		7315434B1B95BDB1004506D4 /* AnswersTableWillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersTableWillCell.h; sourceTree = "<group>"; };
+		7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersTableWillCell.m; sourceTree = "<group>"; };
+		73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewController.m; sourceTree = "<group>"; };
 		73E77A341B8CF0E300864597 /* BlocQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E77A381B8CF0E300864597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E77A391B8CF0E300864597 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73E77A3B1B8CF0E300864597 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73E77A3C1B8CF0E300864597 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		73E77A3E1B8CF0E300864597 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		73E77A3F1B8CF0E300864597 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73E77A3E1B8CF0E300864597 /* QuestionsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewController.h; sourceTree = "<group>"; };
 		73E77A421B8CF0E300864597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73E77A441B8CF0E300864597 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73E77A471B8CF0E300864597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -107,6 +119,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		731543451B9500DD004506D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				731543481B950139004506D4 /* Answers.h */,
+				731543491B950139004506D4 /* Answers.m */,
+				7315433F1B94C62F004506D4 /* Questions.h */,
+				731543401B94C62F004506D4 /* Questions.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		731543461B9500F3004506D4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				73E77A3E1B8CF0E300864597 /* QuestionsTableViewController.h */,
+				73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */,
+				731543341B8F8BFF004506D4 /* QuestionsTableViewCell.h */,
+				731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */,
+				731543421B94E0D9004506D4 /* AnswersViewController.h */,
+				731543431B94E0D9004506D4 /* AnswersViewController.m */,
+				7315434B1B95BDB1004506D4 /* AnswersTableWillCell.h */,
+				7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		73E77A2B1B8CF0E300864597 = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +168,8 @@
 		73E77A361B8CF0E300864597 /* BlocQuery */ = {
 			isa = PBXGroup;
 			children = (
-				73E77A3B1B8CF0E300864597 /* AppDelegate.h */,
-				73E77A3C1B8CF0E300864597 /* AppDelegate.m */,
-				73E77A3E1B8CF0E300864597 /* ViewController.h */,
-				73E77A3F1B8CF0E300864597 /* ViewController.m */,
-				731543311B8F8833004506D4 /* QuestionsTableViewController.h */,
-				731543321B8F8833004506D4 /* QuestionsTableViewController.m */,
-				73E77A411B8CF0E300864597 /* Main.storyboard */,
-				73E77A441B8CF0E300864597 /* Images.xcassets */,
-				73E77A461B8CF0E300864597 /* LaunchScreen.xib */,
+				731543461B9500F3004506D4 /* View Controllers */,
+				731543451B9500DD004506D4 /* Models */,
 				73E77A371B8CF0E300864597 /* Supporting Files */,
 			);
 			path = BlocQuery;
@@ -147,6 +178,11 @@
 		73E77A371B8CF0E300864597 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				73E77A3B1B8CF0E300864597 /* AppDelegate.h */,
+				73E77A3C1B8CF0E300864597 /* AppDelegate.m */,
+				73E77A411B8CF0E300864597 /* Main.storyboard */,
+				73E77A441B8CF0E300864597 /* Images.xcassets */,
+				73E77A461B8CF0E300864597 /* LaunchScreen.xib */,
 				73E77A381B8CF0E300864597 /* Info.plist */,
 				73E77A391B8CF0E300864597 /* main.m */,
 			);
@@ -323,10 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E77A401B8CF0E300864597 /* ViewController.m in Sources */,
+				7315434A1B950139004506D4 /* Answers.m in Sources */,
+				731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */,
+				731543411B94C62F004506D4 /* Questions.m in Sources */,
+				73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */,
+				7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */,
 				73E77A3D1B8CF0E300864597 /* AppDelegate.m in Sources */,
+				731543441B94E0D9004506D4 /* AnswersViewController.m in Sources */,
 				73E77A3A1B8CF0E300864597 /* main.m in Sources */,
-				731543331B8F8833004506D4 /* QuestionsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

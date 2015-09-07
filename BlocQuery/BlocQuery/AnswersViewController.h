@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Questions.h"
+#import "CustomUILabel.h"
 
 @interface AnswersViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

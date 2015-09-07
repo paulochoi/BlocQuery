@@ -7,6 +7,7 @@
 //
 
 #import "QuestionsTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface QuestionsTableViewCell()
 
@@ -17,7 +18,17 @@
 - (void)awakeFromNib {
     // Initialization code
     self.questionsLabel.text = self.questionText;
-    NSLog(@"%@" ,self.questionText);
+    
+    UIColor *backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.0];
+    self.backgroundView = [[UIView alloc]initWithFrame:self.bounds];
+    self.backgroundView.backgroundColor = backgroundColor;
+    
+    //self.questionsLabel.clipsToBounds = YES;
+    //[self.questionsLabel setPreferredMaxLayoutWidth:200.0];
+    
+    self.answersNumber.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.answersNumber.layer.borderWidth = 1.0;
+    self.answersNumber.clipsToBounds = YES;
 }
 
 

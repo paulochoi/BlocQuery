@@ -13,13 +13,15 @@
 
 
 @interface AnswersViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet CustomUILabel *questionLabel;
 @property (strong, nonatomic) NSArray *answers;
 
 
 @end
 
 @implementation AnswersViewController
+- (IBAction)tapButton:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,11 +30,31 @@
     self.questionLabel.text = self.question.question;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.questionLabel.clipsToBounds = YES;
+    
+    self.navigationItem.titleView = [self newTitleViewForTitle:@"Ab"];
     
     [self loadAnswers];
 
 }
 
+
+- (UIView *)newTitleViewForTitle: (NSString *) title {
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.text = title;
+    titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    titleLabel.adjustsFontSizeToFitWidth = NO;
+    
+    [titleLabel sizeToFit];
+    
+    CGRect frame = titleLabel.frame;
+    frame.size.width = 500;
+    
+    titleLabel.frame = frame;
+    //titleLabel.backgroundColor = [UIColor redColor];
+    
+    return titleLabel;
+}
 
 - (void) loadAnswers {
     PFQuery *query = [PFQuery queryWithClassName:@"Answers"];
@@ -76,7 +98,7 @@
         //NSLog(@"%@======" , self.questions[indexPath.row]);
         Answers *item = self.answers[indexPath.row];
         cell.answerLabel.text = item.answer;
-        cell.votesLabel.text = [NSString stringWithFormat:@"%d",(int)item.votes];
+        cell.votesLabel.text = [NSString stringWithFormat:@"%d votes",(int)item.votes];
     }
     
     return cell;

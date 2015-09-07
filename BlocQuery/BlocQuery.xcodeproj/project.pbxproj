@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731444B31B98808600C12A1C /* CustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731444B21B98808600C12A1C /* CustomUILabel.m */; };
 		731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */; };
 		731543411B94C62F004506D4 /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543401B94C62F004506D4 /* Questions.m */; };
 		731543441B94E0D9004506D4 /* AnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543431B94E0D9004506D4 /* AnswersViewController.m */; };
 		7315434A1B950139004506D4 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543491B950139004506D4 /* Answers.m */; };
 		7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */; };
+		73218E291B98B7A20054716F /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73218E281B98B7A20054716F /* CustomNavigationViewController.m */; };
 		73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */; };
 		73E77A3A1B8CF0E300864597 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E77A391B8CF0E300864597 /* main.m */; };
 		73E77A3D1B8CF0E300864597 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E77A3C1B8CF0E300864597 /* AppDelegate.m */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0BF0CF4118C0F2162CAF1307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		731444B11B98808600C12A1C /* CustomUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUILabel.h; sourceTree = "<group>"; };
+		731444B21B98808600C12A1C /* CustomUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUILabel.m; sourceTree = "<group>"; };
 		731543341B8F8BFF004506D4 /* QuestionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewCell.h; sourceTree = "<group>"; };
 		731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewCell.m; sourceTree = "<group>"; };
 		7315433F1B94C62F004506D4 /* Questions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		731543491B950139004506D4 /* Answers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answers.m; sourceTree = "<group>"; };
 		7315434B1B95BDB1004506D4 /* AnswersTableWillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswersTableWillCell.h; sourceTree = "<group>"; };
 		7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersTableWillCell.m; sourceTree = "<group>"; };
+		73218E271B98B7A20054716F /* CustomNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
+		73218E281B98B7A20054716F /* CustomNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
 		73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTableViewController.m; sourceTree = "<group>"; };
 		73E77A341B8CF0E300864597 /* BlocQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E77A381B8CF0E300864597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +151,17 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		73218E261B98A7EE0054716F /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				73218E271B98B7A20054716F /* CustomNavigationViewController.h */,
+				73218E281B98B7A20054716F /* CustomNavigationViewController.m */,
+				731444B11B98808600C12A1C /* CustomUILabel.h */,
+				731444B21B98808600C12A1C /* CustomUILabel.m */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
 		73E77A2B1B8CF0E300864597 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +185,7 @@
 		73E77A361B8CF0E300864597 /* BlocQuery */ = {
 			isa = PBXGroup;
 			children = (
+				73218E261B98A7EE0054716F /* Subclasses */,
 				731543461B9500F3004506D4 /* View Controllers */,
 				731543451B9500DD004506D4 /* Models */,
 				73E77A371B8CF0E300864597 /* Supporting Files */,
@@ -359,11 +377,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73218E291B98B7A20054716F /* CustomNavigationViewController.m in Sources */,
 				7315434A1B950139004506D4 /* Answers.m in Sources */,
 				731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */,
 				731543411B94C62F004506D4 /* Questions.m in Sources */,
 				73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */,
 				7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */,
+				731444B31B98808600C12A1C /* CustomUILabel.m in Sources */,
 				73E77A3D1B8CF0E300864597 /* AppDelegate.m in Sources */,
 				731543441B94E0D9004506D4 /* AnswersViewController.m in Sources */,
 				73E77A3A1B8CF0E300864597 /* main.m in Sources */,

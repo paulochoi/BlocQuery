@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *questionID;
+@property (nonatomic, assign) NSInteger voteCount;
 
 -(id) initWithParseObject: (PFObject *) parseObject;
 

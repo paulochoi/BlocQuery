@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomUILabel.h"
 
 @interface AnswersTableWillCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet CustomUILabel *answerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *votesLabel;
 
 @end

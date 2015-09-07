@@ -15,13 +15,13 @@
 
 
 
-@interface ViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface QuestionsTableViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSArray *questions;
 
 @end
 
-@implementation ViewController
+@implementation QuestionsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,45 +31,37 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    UIColor *backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.0];
+    self.tableView.backgroundView = [[UIView alloc]initWithFrame:self.tableView.bounds];
+    self.tableView.backgroundView.backgroundColor = backgroundColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+}
+
+- (IBAction)pressPlus:(id)sender {
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Questions"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-        
-        if (!error) {
-            for (PFObject *object in objects) {
-                
-                Questions *question = [[Questions alloc] initWithParseObject:object];
-                [tempArray addObject:question];
-            }
-        } else {
-            
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        
-        self.questions = [tempArray copy];
-        [self.tableView reloadData];
-        
-    }];
+    CGRect frame = self.navigationItem.titleView.frame;
+    frame.origin.x = 0;
+    self.navigationItem.titleView.frame = frame;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     if (![PFUser currentUser]){
-//        PFLogInViewController *loginViewController = [[PFLogInViewController alloc] init];
-//        [loginViewController setDelegate:self];
-//        
-//        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-//        [signUpViewController setDelegate:self];
-//        
-//        [loginViewController setSignUpController:signUpViewController];
-//        
-//        [self presentViewController:loginViewController animated:YES completion:nil];
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc] init];
+        [loginViewController setDelegate:self];
+        
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self];
+        
+        [loginViewController setSignUpController:signUpViewController];
+        
+        [self presentViewController:loginViewController animated:YES completion:nil];
     }
 }
 
@@ -93,6 +85,25 @@
 - (void)logInViewController:(PFLogInViewController * __nonnull)logInController didLogInUser:(PFUser * __nonnull)user{
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Questions"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+        
+        if (!error) {
+            for (PFObject *object in objects) {
+                
+                Questions *question = [[Questions alloc] initWithParseObject:object];
+                [tempArray addObject:question];
+            }
+        } else {
+            
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        
+        self.questions = [tempArray copy];
+        [self.tableView reloadData];
+        
+    }];
 
 }
 
@@ -167,6 +178,15 @@
         
         //cell.questionsLabel.text = self.questions[indexPath.row];
         cell.questionsLabel.text = item.question;
+        cell.answersNumber.text = [NSString stringWithFormat:@"%ld answers" , item.voteCount];
+        
+        if (item.voteCount == 0) {
+            cell.star2.alpha = 0;
+            cell.star3.alpha = 0;
+        } else if (item.voteCount < 4) {
+            cell.star3.alpha = 0;
+        }
+        
     }
 
     return cell;

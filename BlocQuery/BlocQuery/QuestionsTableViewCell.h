@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomUILabel.h"
+
 
 @interface QuestionsTableViewCell : UITableViewCell
 
 @property (nonatomic,strong) NSString * questionText;
-@property (weak, nonatomic) IBOutlet UILabel *questionsLabel;
-
+@property (weak, nonatomic) IBOutlet CustomUILabel *questionsLabel;
+@property (weak, nonatomic) IBOutlet CustomUILabel *answersNumber;
+@property (weak, nonatomic) IBOutlet UIImageView *star1;
+@property (weak, nonatomic) IBOutlet UIImageView *star2;
+@property (weak, nonatomic) IBOutlet UIImageView *star3;
 
 @end

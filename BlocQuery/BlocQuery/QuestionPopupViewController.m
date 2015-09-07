@@ -10,6 +10,8 @@
 
 @interface QuestionPopupViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *popupView;
+
 @end
 
 @implementation QuestionPopupViewController
@@ -23,6 +25,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

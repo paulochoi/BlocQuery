@@ -31,6 +31,7 @@
 		73E77A6D1B8DEED900864597 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E77A6C1B8DEED900864597 /* SystemConfiguration.framework */; };
 		73E77A6F1B8DEEE000864597 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E77A6E1B8DEEE000864597 /* libz.dylib */; };
 		73E77A711B8DEEE700864597 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E77A701B8DEEE700864597 /* libsqlite3.dylib */; };
+		73F6F90A1B9DC8EB00A2D17A /* QuestionPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F6F9091B9DC8EB00A2D17A /* QuestionPopupViewController.m */; };
 		91F960D7D63FC8B8377830B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0CF4118C0F2162CAF1307 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,8 @@
 		73E77A6C1B8DEED900864597 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		73E77A6E1B8DEEE000864597 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		73E77A701B8DEEE700864597 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		73F6F9081B9DC8EB00A2D17A /* QuestionPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPopupViewController.h; sourceTree = "<group>"; };
+		73F6F9091B9DC8EB00A2D17A /* QuestionPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPopupViewController.m; sourceTree = "<group>"; };
 		B7CC43F233B66DFE5C1AF060 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA49BE46DE1B81218FE44DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +202,8 @@
 				73E77A3B1B8CF0E300864597 /* AppDelegate.h */,
 				73E77A3C1B8CF0E300864597 /* AppDelegate.m */,
 				73E77A411B8CF0E300864597 /* Main.storyboard */,
+				73F6F9081B9DC8EB00A2D17A /* QuestionPopupViewController.h */,
+				73F6F9091B9DC8EB00A2D17A /* QuestionPopupViewController.m */,
 				73E77A441B8CF0E300864597 /* Images.xcassets */,
 				73E77A461B8CF0E300864597 /* LaunchScreen.xib */,
 				73E77A381B8CF0E300864597 /* Info.plist */,
@@ -383,6 +388,7 @@
 				731543411B94C62F004506D4 /* Questions.m in Sources */,
 				73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */,
 				7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */,
+				73F6F90A1B9DC8EB00A2D17A /* QuestionPopupViewController.m in Sources */,
 				731444B31B98808600C12A1C /* CustomUILabel.m in Sources */,
 				73E77A3D1B8CF0E300864597 /* AppDelegate.m in Sources */,
 				731543441B94E0D9004506D4 /* AnswersViewController.m in Sources */,

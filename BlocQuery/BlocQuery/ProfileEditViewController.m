@@ -32,6 +32,15 @@
                                      object[@"lastName"] = self.lastName.text;
                                      [object saveInBackground];
                                  }];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Successful"
+                                                    message:@"Your profile has been updated"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 

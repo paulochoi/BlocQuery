@@ -1,5 +1,5 @@
 //
-//  QuestionPopupViewController.h
+//  QuestionPopUpViewController.h
 //  BlocQuery
 //
 //  Created by Paulo Choi on 9/7/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionPopupViewController : UINavigationController
+@interface QuestionPopUpViewController : UIViewController
 
 @end

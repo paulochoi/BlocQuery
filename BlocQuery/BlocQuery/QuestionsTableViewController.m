@@ -12,10 +12,10 @@
 #import "QuestionsTableViewCell.h"
 #import "Questions.h"
 #import "AnswersViewController.h"
+#import "QuestionPopUpViewController.h"
 
 
-
-@interface QuestionsTableViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface QuestionsTableViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, QuestionPopUpViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *questions;
 
@@ -199,7 +199,41 @@
         Questions *question = (Questions *)sender;
         
         answer.question = question;
+    } else if ([segue.identifier isEqualToString:@"presentPopup"]) {
+        ((QuestionPopUpViewController *)segue.destinationViewController).delegate = self;
     }
 }
+
+#pragma mark - QuestionPopUpViewControllerDelegate
+
+-(void)questionPopUpViewController:(QuestionPopUpViewController *)controller shouldPostQuestion:(NSString *)question {
+    //insert the question into the table
+    
+    PFObject *newQuestion = [PFObject objectWithClassName:@"Questions"];
+    newQuestion[@"text"] = question;
+    [newQuestion saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            NSLog(@"Successful");
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Successful"
+                                                            message:@"Your question was submitted"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            
+            [self.tableView reloadData];
+            
+        } else {
+            // There was a problem, check error.description
+            NSLog(@"Not Successful");
+        }
+    }];
+
+}
+
 
 @end

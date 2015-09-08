@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionPopUpViewController : UIViewController
+@class QuestionPopUpViewController;
 
+@protocol QuestionPopUpViewControllerDelegate <NSObject>
+
+- (void)questionPopUpViewController:(QuestionPopUpViewController *)controller shouldPostQuestion:(NSString *)question;
+
+@end
+
+@interface QuestionPopUpViewController : UIViewController
+@property (weak, nonatomic) id<QuestionPopUpViewControllerDelegate> delegate;
 @end

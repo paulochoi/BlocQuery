@@ -246,7 +246,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpic" translatesAutoresizingMaskIntoConstraints="NO" id="K5O-xq-aor">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K5O-xq-aor" customClass="PFImageView">
                                         <rect key="frame" x="100" y="117" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="51m-vy-T9g"/>
@@ -277,6 +277,15 @@
                                             <action selector="cancel:" destination="IHc-HQ-tld" eventType="touchUpInside" id="Ivw-w4-SNx"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oly-D2-HuS">
+                                        <rect key="frame" x="173" y="135" width="51" height="30"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updatePic:" destination="IHc-HQ-tld" eventType="touchUpInside" id="j7B-dt-mMm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -290,6 +299,7 @@
                                     <constraint firstItem="K5O-xq-aor" firstAttribute="leading" secondItem="ftk-xS-fBS" secondAttribute="leading" id="Jbj-to-MTn"/>
                                     <constraint firstItem="zn1-14-VgN" firstAttribute="leading" secondItem="j1d-bL-Wtk" secondAttribute="leading" constant="8" id="Lz2-xd-ai0"/>
                                     <constraint firstItem="ftk-xS-fBS" firstAttribute="leading" secondItem="wil-sg-Wlp" secondAttribute="trailing" constant="9" id="OkM-zG-Pby"/>
+                                    <constraint firstItem="oly-D2-HuS" firstAttribute="leading" secondItem="K5O-xq-aor" secondAttribute="trailing" constant="8" id="Oxn-lk-D21"/>
                                     <constraint firstItem="oIF-h4-PI6" firstAttribute="top" secondItem="tga-tc-RPR" secondAttribute="bottom" constant="21" id="P2s-OQ-qL7"/>
                                     <constraint firstItem="Z9D-IE-hhn" firstAttribute="leading" secondItem="j1d-bL-Wtk" secondAttribute="leading" constant="8" id="Ptw-bm-TbL"/>
                                     <constraint firstItem="tga-tc-RPR" firstAttribute="top" secondItem="j1d-bL-Wtk" secondAttribute="top" constant="8" id="Wbb-Fe-wLJ"/>
@@ -297,6 +307,7 @@
                                     <constraint firstItem="oIF-h4-PI6" firstAttribute="centerY" secondItem="uLc-zL-Mjn" secondAttribute="centerY" constant="-0.5" id="XrD-vW-0JA"/>
                                     <constraint firstAttribute="bottom" secondItem="59d-YH-Q4k" secondAttribute="bottom" constant="8" id="eTe-he-yUh"/>
                                     <constraint firstItem="uLc-zL-Mjn" firstAttribute="leading" secondItem="oIF-h4-PI6" secondAttribute="trailing" constant="8" id="frA-TE-eAH"/>
+                                    <constraint firstItem="oly-D2-HuS" firstAttribute="centerY" secondItem="K5O-xq-aor" secondAttribute="centerY" constant="0.5" id="hrg-4U-aFg"/>
                                     <constraint firstItem="wil-sg-Wlp" firstAttribute="top" secondItem="oIF-h4-PI6" secondAttribute="bottom" constant="12" id="m0z-wk-u6v"/>
                                     <constraint firstAttribute="bottom" secondItem="zn1-14-VgN" secondAttribute="bottom" constant="8" id="puL-Ok-YC9"/>
                                     <constraint firstItem="wil-sg-Wlp" firstAttribute="centerY" secondItem="ftk-xS-fBS" secondAttribute="centerY" constant="-0.5" id="tqZ-oB-n6L"/>

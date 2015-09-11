@@ -15,10 +15,10 @@
         self.question = parseObject[@"text"];
         self.questionID = parseObject.objectId;
         
-        PFQuery *query = [PFQuery queryWithClassName:@"Answers"];
-        [query whereKey:@"question" equalTo:[PFObject objectWithoutDataWithClassName:@"Questions" objectId:self.questionID]];
+//        PFQuery *query = [PFQuery queryWithClassName:@"Answers"];
+//        [query whereKey:@"question" equalTo:[PFObject objectWithoutDataWithClassName:@"Questions" objectId:self.questionID]];
         
-        self.voteCount = [query countObjects];
+        self.voteCount = [parseObject[@"answers"] integerValue];
         
         PFObject *userObject = (PFObject *)parseObject[@"questionUser"];
 

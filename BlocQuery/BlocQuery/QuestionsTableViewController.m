@@ -17,7 +17,7 @@
 
 @interface QuestionsTableViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, QuestionPopUpViewControllerDelegate>
 
-@property (strong, nonatomic) NSArray *questions;
+@property (copy, nonatomic) NSMutableArray *questions;
 
 @end
 
@@ -86,6 +86,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Questions"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         
@@ -212,6 +213,7 @@
     
     PFObject *newQuestion = [PFObject objectWithClassName:@"Questions"];
     newQuestion[@"text"] = question;
+    newQuestion[@"questionUser"] = [PFUser currentUser];
     [newQuestion saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -224,8 +226,11 @@
                                                   otherButtonTitles:nil];
             [alert show];
             
-            [controller dismissViewControllerAnimated:YES completion:nil];
+            Questions *question = [[Questions alloc] initWithParseObject:newQuestion];
             
+            [self.questions addObject:question];
+            
+            [controller dismissViewControllerAnimated:YES completion:nil];
             [self.tableView reloadData];
             
         } else {

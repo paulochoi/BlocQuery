@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *questionID;
 @property (nonatomic, assign) NSInteger voteCount;
+@property (nonatomic, strong) PFFile *profilePic;
 
 -(id) initWithParseObject: (PFObject *) parseObject;
 

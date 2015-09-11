@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomUILabel.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 
 @interface QuestionsTableViewCell : UITableViewCell
@@ -18,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *star1;
 @property (weak, nonatomic) IBOutlet UIImageView *star2;
 @property (weak, nonatomic) IBOutlet UIImageView *star3;
+@property (weak, nonatomic) IBOutlet PFImageView *questionAvatar;
 
 @end

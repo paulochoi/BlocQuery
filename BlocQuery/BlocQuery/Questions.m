@@ -16,12 +16,25 @@
         self.questionID = parseObject.objectId;
         
         PFQuery *query = [PFQuery queryWithClassName:@"Answers"];
-        //[query whereKey:@"question" equalTo:self.questionID];
         [query whereKey:@"question" equalTo:[PFObject objectWithoutDataWithClassName:@"Questions" objectId:self.questionID]];
         
         self.voteCount = [query countObjects];
+        
+        PFObject *userObject = (PFObject *)parseObject[@"questionUser"];
 
-        NSLog(@"%ld" ,(long)self.voteCount);
+        PFQuery *queryUserProfile = [PFQuery queryWithClassName:@"_User"];
+        
+        [queryUserProfile whereKey:@"objectId" equalTo:userObject.objectId];
+        
+        [queryUserProfile findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            if (!error) {
+                self.profilePic = objects.firstObject[@"profilePic"];
+
+            } else {
+                
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     }
     
     return self;

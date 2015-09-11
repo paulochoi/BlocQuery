@@ -26,7 +26,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TtP-9R-Wgv" id="3pr-Ka-ti0">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpic" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-nd-GL2">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpic" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-nd-GL2" customClass="PFImageView">
                                                     <rect key="frame" x="546" y="14" width="46" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="NOk-uo-ftc"/>
@@ -137,6 +137,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="answersNumber" destination="I5y-uI-KtR" id="3pO-Fh-Zr4"/>
+                                            <outlet property="questionAvatar" destination="VsO-nd-GL2" id="Od9-9l-2XX"/>
                                             <outlet property="questionsLabel" destination="fIy-Af-9PG" id="5OZ-qT-wjc"/>
                                             <outlet property="star1" destination="J2n-1l-SN4" id="eDr-gy-gp0"/>
                                             <outlet property="star2" destination="lO8-M6-Yk3" id="ddH-y1-c7D"/>

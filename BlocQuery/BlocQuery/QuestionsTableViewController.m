@@ -163,7 +163,6 @@
     
     Questions *item = self.questions[indexPath.row];
     [self performSegueWithIdentifier:@"segue" sender:item];
-    
 }
 
 
@@ -187,6 +186,8 @@
             cell.star3.alpha = 0;
         }
         
+        cell.questionAvatar.file = item.profilePic;
+        [cell.questionAvatar loadInBackground];
     }
 
     return cell;

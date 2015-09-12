@@ -32,7 +32,7 @@
     self.tableView.dataSource = self;
     self.questionLabel.clipsToBounds = YES;
     
-    self.navigationItem.titleView = [self newTitleViewForTitle:@"Ab"];
+    //self.navigationItem.titleView = [self newTitleViewForTitle:@];
     
     [self loadAnswers];
 

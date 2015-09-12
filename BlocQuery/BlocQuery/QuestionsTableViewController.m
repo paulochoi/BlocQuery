@@ -17,7 +17,7 @@
 
 @interface QuestionsTableViewController ()  <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, QuestionPopUpViewControllerDelegate>
 
-@property (copy, nonatomic) NSMutableArray *questions;
+@property (strong, nonatomic) NSMutableArray *questions;
 
 @end
 
@@ -101,7 +101,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         
-        self.questions = [tempArray copy];
+        self.questions = [tempArray mutableCopy];
         [self.tableView reloadData];
         
     }];
@@ -216,22 +216,14 @@
     newQuestion[@"questionUser"] = [PFUser currentUser];
     [newQuestion saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // The object has been saved.
             NSLog(@"Successful");
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Successful"
-                                                            message:@"Your question was submitted"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
             
             Questions *question = [[Questions alloc] initWithParseObject:newQuestion];
             
-            [self.questions addObject:question];
-            
-            [controller dismissViewControllerAnimated:YES completion:nil];
-            [self.tableView reloadData];
+            [controller dismissViewControllerAnimated:YES completion:^{
+                [self.questions insertObject:question atIndex:0];
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
             
         } else {
             // There was a problem, check error.description

@@ -35,7 +35,7 @@
         NSString* newText = [textView.text stringByReplacingCharactersInRange:range withString:text];
         
         PFObject *point = [PFObject objectWithoutDataWithClassName:@"Questions" objectId:self.question.questionID];
-
+        [point incrementKey:@"answers" byAmount:[NSNumber numberWithInt:1]];
         
         PFObject *newAnswer = [PFObject objectWithClassName:@"Answers"];
         newAnswer[@"text"] = newText;

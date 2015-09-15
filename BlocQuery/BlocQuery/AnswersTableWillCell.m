@@ -8,7 +8,34 @@
 
 #import "AnswersTableWillCell.h"
 
+@interface AnswersTableWillCell()
+
+@property (nonatomic, assign) BOOL liked;
+
+@end
+
+
 @implementation AnswersTableWillCell
+
+- (IBAction)pressHeart:(id)sender {
+    
+    NSString *imageNamed = [NSString new];
+    NSArray *arrayWithTwoStrings = [self.votesLabel.text componentsSeparatedByString:@" "];
+    
+    if (self.liked == NO) {
+        imageNamed = @"Icon_Dark";
+        self.votesLabel.text = [NSString stringWithFormat:@"%ld votes", [[arrayWithTwoStrings objectAtIndex:0] integerValue] + 1];
+        self.liked = YES;
+    } else {
+        imageNamed = @"Icon_Grey";
+        self.votesLabel.text = [NSString stringWithFormat:@"%ld votes", [[arrayWithTwoStrings objectAtIndex:0] integerValue] - 1];
+        self.liked = NO;
+    }
+    
+    UIImage *heartState = [UIImage imageNamed:imageNamed];
+    [(UIButton *)sender setImage:heartState forState:UIControlStateNormal];
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
@@ -18,6 +45,8 @@
     self.backgroundView.backgroundColor = backgroundColor;
     
     self.answerLabel.clipsToBounds = YES;
+    
+    self.liked = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

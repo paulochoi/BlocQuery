@@ -40,7 +40,7 @@
         PFObject *newAnswer = [PFObject objectWithClassName:@"Answers"];
         newAnswer[@"text"] = newText;
         newAnswer[@"question"] = point;
-        //newAnswer[@"votes"] = [[NSNumber alloc] initWithInt:0];
+        newAnswer[@"votes"] = [[NSNumber alloc] initWithInt:0];
         
         [newAnswer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {

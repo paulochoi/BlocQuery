@@ -26,7 +26,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TtP-9R-Wgv" id="3pr-Ka-ti0">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpic" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-nd-GL2" customClass="PFImageView">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Userpic" translatesAutoresizingMaskIntoConstraints="NO" id="VsO-nd-GL2" customClass="PFImageView">
                                                     <rect key="frame" x="546" y="14" width="46" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="NOk-uo-ftc"/>
@@ -506,9 +506,13 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4if-uq-tiX">
                                                     <rect key="frame" x="569" y="84" width="23" height="22"/>
-                                                    <state key="normal" image="Icon_Dark">
+                                                    <size key="titleShadowOffset" width="2" height="1"/>
+                                                    <state key="normal" image="Icon_Grey">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="pressHeart:" destination="3kg-Hg-GWY" eventType="touchUpInside" id="buw-Ve-NUd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -701,7 +705,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon_Dark" width="23" height="22"/>
+        <image name="Icon_Grey" width="23" height="22"/>
         <image name="Userpic" width="90" height="90"/>
         <image name="settings" width="33" height="32"/>
         <image name="star" width="50" height="50"/>

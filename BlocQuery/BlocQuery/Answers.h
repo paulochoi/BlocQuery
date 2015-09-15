@@ -16,6 +16,6 @@
 @property (nonatomic, assign) NSInteger votes;
 
 -(id) initWithParseObject: (PFObject *) parseObject;
-
+-(void) postAnswers;
 
 @end

@@ -14,6 +14,7 @@
 		7315434A1B950139004506D4 /* Answers.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543491B950139004506D4 /* Answers.m */; };
 		7315434D1B95BDB1004506D4 /* AnswersTableWillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */; };
 		73218E291B98B7A20054716F /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73218E281B98B7A20054716F /* CustomNavigationViewController.m */; };
+		7328FA4F1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7328FA4E1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m */; };
 		73572C191B9DD368003E8ED1 /* QuestionPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73572C181B9DD368003E8ED1 /* QuestionPopUpViewController.m */; };
 		73572C1C1B9F2E4B003E8ED1 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73572C1B1B9F2E4B003E8ED1 /* ProfileEditViewController.m */; };
 		73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D68D721B979EC30005B8DC /* QuestionsTableViewController.m */; };
@@ -62,6 +63,8 @@
 		7315434C1B95BDB1004506D4 /* AnswersTableWillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswersTableWillCell.m; sourceTree = "<group>"; };
 		73218E271B98B7A20054716F /* CustomNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
 		73218E281B98B7A20054716F /* CustomNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
+		7328FA4D1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerToQuestionsViewController.h; sourceTree = "<group>"; };
+		7328FA4E1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerToQuestionsViewController.m; sourceTree = "<group>"; };
 		73572C171B9DD368003E8ED1 /* QuestionPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPopUpViewController.h; sourceTree = "<group>"; };
 		73572C181B9DD368003E8ED1 /* QuestionPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPopUpViewController.m; sourceTree = "<group>"; };
 		73572C1A1B9F2E4B003E8ED1 /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				73572C181B9DD368003E8ED1 /* QuestionPopUpViewController.m */,
 				73572C1A1B9F2E4B003E8ED1 /* ProfileEditViewController.h */,
 				73572C1B1B9F2E4B003E8ED1 /* ProfileEditViewController.m */,
+				7328FA4D1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.h */,
+				7328FA4E1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				73218E291B98B7A20054716F /* CustomNavigationViewController.m in Sources */,
 				7315434A1B950139004506D4 /* Answers.m in Sources */,
 				731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */,
+				7328FA4F1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m in Sources */,
 				731543411B94C62F004506D4 /* Questions.m in Sources */,
 				73572C1C1B9F2E4B003E8ED1 /* ProfileEditViewController.m in Sources */,
 				73D68D731B979EC30005B8DC /* QuestionsTableViewController.m in Sources */,

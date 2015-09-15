@@ -15,9 +15,15 @@
     if (self) {
         self.answer = parseObject[@"text"];
         self.votes = (NSInteger)parseObject[@"votes"];
+        
     }
     
     return self;
+}
+
+-(void) postAnswers {
+    
+
 }
 
 @end

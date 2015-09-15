@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "Answers.h"
 #import "AnswersTableWillCell.h"
+#import "AnswerToQuestionsViewController.h"
 
 
 @interface AnswersViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -102,6 +103,17 @@
     }
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"answerSegue"]) {
+        
+        AnswerToQuestionsViewController *answer = segue.destinationViewController;
+        Questions *question = self.question;
+        
+        answer.question = question;
+    }
+
 }
 /*
 #pragma mark - Navigation

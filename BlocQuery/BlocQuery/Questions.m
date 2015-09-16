@@ -29,7 +29,7 @@
         [queryUserProfile findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
             if (!error) {
                 self.profilePic = objects.firstObject[@"profilePic"];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"picFetchComplete" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"picFetchComplete" object:self];
                 
             } else {
                 

@@ -29,6 +29,8 @@
     self.answersNumber.layer.borderColor = [UIColor whiteColor].CGColor;
     self.answersNumber.layer.borderWidth = 1.0;
     self.answersNumber.clipsToBounds = YES;
+    
+
 }
 
 

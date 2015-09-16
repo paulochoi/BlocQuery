@@ -64,10 +64,10 @@
         
         [self presentViewController:loginViewController animated:YES completion:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
-            [self.tableView reloadData];
-            
-        }];
+//        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
+//            [self.tableView reloadData];
+//        }];
+        
     }
 }
 
@@ -111,6 +111,13 @@
         
         self.questions = [tempArray mutableCopy];
         [self.tableView reloadData];
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
+            
+            NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:[self.questions indexOfObject:note] inSection:0];
+            NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
+            [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
+        }];
         
     }];
 
@@ -197,6 +204,8 @@
         
         cell.questionAvatar.file = item.profilePic;
         [cell.questionAvatar loadInBackground];
+        
+
     }
 
     return cell;

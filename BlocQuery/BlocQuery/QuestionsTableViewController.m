@@ -63,8 +63,14 @@
         [loginViewController setSignUpController:signUpViewController];
         
         [self presentViewController:loginViewController animated:YES completion:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
+            [self.tableView reloadData];
+            
+        }];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -88,6 +94,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Questions"];
     [query orderByDescending:@"createdAt"];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         
@@ -169,7 +176,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeu eReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     QuestionsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (cell){

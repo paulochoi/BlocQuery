@@ -15,6 +15,7 @@
     if (self) {
         self.answer = parseObject[@"text"];
         self.votes = (NSNumber *)parseObject[@"votes"];
+        self.answerID = parseObject.objectId;
 //        
 //        if (self.votes == -5764607523034234733){
 //            self.votes = 0;

@@ -14,6 +14,8 @@
 @property (nonatomic, strong) Questions *question;
 @property (nonatomic, strong) NSString *answer;
 @property (nonatomic, strong) NSNumber* votes;
+@property (nonatomic, strong) NSString *answerID;
+
 
 -(id) initWithParseObject: (PFObject *) parseObject;
 -(void) postAnswers;

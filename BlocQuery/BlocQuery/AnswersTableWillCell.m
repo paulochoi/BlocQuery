@@ -7,6 +7,7 @@
 //
 
 #import "AnswersTableWillCell.h"
+#import <Parse/Parse.h>
 
 @interface AnswersTableWillCell()
 
@@ -25,10 +26,17 @@
     if (self.liked == NO) {
         imageNamed = @"Icon_Dark";
         self.votesLabel.text = [NSString stringWithFormat:@"%ld votes", [[arrayWithTwoStrings objectAtIndex:0] integerValue] + 1];
+        
+        PFObject *point = [PFObject objectWithoutDataWithClassName:@"Answers" objectId:self.answerID];
+        [point incrementKey:@"votes" byAmount:[NSNumber numberWithInt:1]];
+        
         self.liked = YES;
     } else {
         imageNamed = @"Icon_Grey";
         self.votesLabel.text = [NSString stringWithFormat:@"%ld votes", [[arrayWithTwoStrings objectAtIndex:0] integerValue] - 1];
+        
+        PFObject *point = [PFObject objectWithoutDataWithClassName:@"Answers" objectId:self.answerID];
+        [point incrementKey:@"votes" byAmount:[NSNumber numberWithInt:-1]];
         self.liked = NO;
     }
     

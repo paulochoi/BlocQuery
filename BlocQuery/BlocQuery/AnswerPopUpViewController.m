@@ -40,6 +40,8 @@
             NSLog(@"Not Successful");
         }
     }];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 

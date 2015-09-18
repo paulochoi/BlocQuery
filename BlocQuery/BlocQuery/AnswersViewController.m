@@ -103,6 +103,7 @@
         
         cell.answerLabel.text = item.answer;
         cell.votesLabel.text = [NSString stringWithFormat:@"%@ votes",item.votes];
+        cell.answerID = item.answerID;
     }
     
     return cell;

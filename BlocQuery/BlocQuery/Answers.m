@@ -14,7 +14,11 @@
 -(id) initWithParseObject: (PFObject *) parseObject {
     if (self) {
         self.answer = parseObject[@"text"];
-        self.votes = (NSInteger)parseObject[@"votes"];
+        self.votes = (NSNumber *)parseObject[@"votes"];
+//        
+//        if (self.votes == -5764607523034234733){
+//            self.votes = 0;
+//        }
         
     }
     

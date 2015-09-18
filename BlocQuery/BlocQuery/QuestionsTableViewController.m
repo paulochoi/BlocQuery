@@ -241,7 +241,6 @@
                 [self.questions insertObject:question atIndex:0];
                 [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
-            
         } else {
             // There was a problem, check error.description
             NSLog(@"Not Successful");

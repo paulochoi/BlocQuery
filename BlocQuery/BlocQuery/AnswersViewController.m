@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Answers.h"
 #import "AnswersTableWillCell.h"
-#import "AnswerToQuestionsViewController.h"
+#import "AnswerPopUpViewController.h"
 
 
 @interface AnswersViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -61,6 +61,8 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Answers"];
 
     [query whereKey:@"question" equalTo:[PFObject objectWithoutDataWithClassName:@"Questions" objectId:self.question.questionID]];
+    [query orderByDescending:@"votes"];
+
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
@@ -98,8 +100,9 @@
         // Configure the cell...
         //NSLog(@"%@======" , self.questions[indexPath.row]);
         Answers *item = self.answers[indexPath.row];
+        
         cell.answerLabel.text = item.answer;
-        cell.votesLabel.text = [NSString stringWithFormat:@"%d votes",(int)item.votes];
+        cell.votesLabel.text = [NSString stringWithFormat:@"%@ votes",item.votes];
     }
     
     return cell;
@@ -108,7 +111,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"answerSegue"]) {
         
-        AnswerToQuestionsViewController *answer = segue.destinationViewController;
+        AnswerPopUpViewController *answer = segue.destinationViewController;
         Questions *question = self.question;
         
         answer.question = question;

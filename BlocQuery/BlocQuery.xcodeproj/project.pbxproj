@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730823271BAB33080055378C /* AnswerPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730823261BAB33080055378C /* AnswerPopUpViewController.m */; };
 		731444B31B98808600C12A1C /* CustomUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731444B21B98808600C12A1C /* CustomUILabel.m */; };
 		731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543351B8F8BFF004506D4 /* QuestionsTableViewCell.m */; };
 		731543411B94C62F004506D4 /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = 731543401B94C62F004506D4 /* Questions.m */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		0BF0CF4118C0F2162CAF1307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		730823251BAB33080055378C /* AnswerPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerPopUpViewController.h; sourceTree = "<group>"; };
+		730823261BAB33080055378C /* AnswerPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerPopUpViewController.m; sourceTree = "<group>"; };
 		731444B11B98808600C12A1C /* CustomUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUILabel.h; sourceTree = "<group>"; };
 		731444B21B98808600C12A1C /* CustomUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUILabel.m; sourceTree = "<group>"; };
 		731543341B8F8BFF004506D4 /* QuestionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTableViewCell.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				73572C1B1B9F2E4B003E8ED1 /* ProfileEditViewController.m */,
 				7328FA4D1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.h */,
 				7328FA4E1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m */,
+				730823251BAB33080055378C /* AnswerPopUpViewController.h */,
+				730823261BAB33080055378C /* AnswerPopUpViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73218E291B98B7A20054716F /* CustomNavigationViewController.m in Sources */,
+				730823271BAB33080055378C /* AnswerPopUpViewController.m in Sources */,
 				7315434A1B950139004506D4 /* Answers.m in Sources */,
 				731543361B8F8BFF004506D4 /* QuestionsTableViewCell.m in Sources */,
 				7328FA4F1BA4DAFB00CE98B3 /* AnswerToQuestionsViewController.m in Sources */,

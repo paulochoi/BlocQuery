@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) Questions *question;
 @property (nonatomic, strong) NSString *answer;
-@property (nonatomic, assign) NSInteger votes;
+@property (nonatomic, strong) NSNumber* votes;
 
 -(id) initWithParseObject: (PFObject *) parseObject;
 -(void) postAnswers;

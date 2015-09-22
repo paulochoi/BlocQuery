@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet CustomUILabel *answerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *votesLabel;
 @property (strong, nonatomic) NSString *answerID;
+@property (nonatomic, assign) BOOL defaultVoteStatus;
+
 
 @end

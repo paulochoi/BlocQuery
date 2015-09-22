@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet CustomUILabel *questionLabel;
 @property (strong, nonatomic) NSArray *answers;
 
-
 @end
 
 @implementation AnswersViewController
@@ -34,9 +33,35 @@
     self.questionLabel.clipsToBounds = YES;
     
     //self.navigationItem.titleView = [self newTitleViewForTitle:@];
-    
-    [self loadAnswers];
 
+    [self loadAnswers];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(voteCompleted:) name:@"voteFetchComplete" object:nil];
+    
+//    [[NSNotificationCenter defaultCenter] addObserverForName:@"voteFetchComplete" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+//        //cell.defaultVoteStatus = YES;
+//        
+//        NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:[self.answers indexOfObject:note.object] inSection:0];
+//        
+//        NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
+//        
+//        [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
+//    }];
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) voteCompleted: (NSNotification *) notification {
+    NSUInteger index = [self.answers indexOfObject:notification.object];
+    
+    if (index != NSNotFound) {
+        NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:index inSection:0];
+        NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
+        [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
+    }
 }
 
 
@@ -82,7 +107,6 @@
         [self.tableView reloadData];
 
     }];
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -104,8 +128,13 @@
         cell.answerLabel.text = item.answer;
         cell.votesLabel.text = [NSString stringWithFormat:@"%@ votes",item.votes];
         cell.answerID = item.answerID;
+        
+        if (item.voted == YES){
+            cell.defaultVoteStatus = YES;
+        } else {
+            cell.defaultVoteStatus = NO;
+        }
     }
-    
     return cell;
 }
 

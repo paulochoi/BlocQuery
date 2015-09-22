@@ -36,7 +36,25 @@
     self.tableView.backgroundView.backgroundColor = backgroundColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(questionDidUpdate:) name:@"picFetchComplete" object:nil];
+    
 }
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) questionDidUpdate: (NSNotification *) notification{
+    
+    NSUInteger index = [self.questions indexOfObject:notification.object];
+    
+    if (index != NSNotFound) {
+        NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:index inSection:0];
+        NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
+        [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
 
 - (IBAction)pressPlus:(id)sender {
 }
@@ -112,16 +130,22 @@
         self.questions = [tempArray mutableCopy];
         [self.tableView reloadData];
         
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
-            
-            NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:[self.questions indexOfObject:note] inSection:0];
-            NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
-            [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
-        }];
+        
+        
+//        [[NSNotificationCenter defaultCenter] addObserverForName:@"picFetchComplete" object:nil queue:nil usingBlock:^(NSNotification *note) {
+//            
+//            NSIndexPath *rowToReload = [NSIndexPath indexPathForRow:[self.questions indexOfObject:note.object] inSection:0];
+//            NSArray *rowArray = [NSArray arrayWithObjects:rowToReload, nil];
+//            [self.tableView reloadRowsAtIndexPaths:rowArray withRowAnimation:UITableViewRowAnimationNone];
+//        }];
         
     }];
 
 }
+
+
+
+//NEED TO REMOVE OBSERVER
 
 
 - (void)logInViewController:(PFLogInViewController * __nonnull)logInController didFailToLogInWithError:(nullable NSError *)error {
@@ -181,6 +205,13 @@
     [self performSegueWithIdentifier:@"segue" sender:item];
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+
+}
+
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //UITableViewCell *cell = [tableView dequeu eReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

@@ -12,11 +12,28 @@
 @interface AnswersTableWillCell()
 
 @property (nonatomic, assign) BOOL liked;
+@property (weak, nonatomic) IBOutlet UIButton *heardButton;
 
 @end
 
 
 @implementation AnswersTableWillCell
+
+-(void) setDefaultVoteStatus:(BOOL)defaultVoteStatus {
+    _defaultVoteStatus = defaultVoteStatus;
+    
+    NSString *imageNamed = [NSString new];
+    
+    if (self.defaultVoteStatus == YES){
+        imageNamed = @"Icon_Dark";
+    } else {
+        imageNamed = @"Icon_Grey";
+    }
+    
+    UIImage *heartState = [UIImage imageNamed:imageNamed];
+    [self.heardButton setImage:heartState forState:UIControlStateNormal];
+    
+}
 
 - (IBAction)pressHeart:(id)sender {
     
@@ -29,6 +46,11 @@
         
         PFObject *point = [PFObject objectWithoutDataWithClassName:@"Answers" objectId:self.answerID];
         [point incrementKey:@"votes" byAmount:[NSNumber numberWithInt:1]];
+
+        PFRelation *user = [point relationForKey:@"likes"];
+        [user addObject:[PFUser currentUser]];
+        
+        [point saveInBackground];
         
         self.liked = YES;
     } else {
@@ -37,6 +59,11 @@
         
         PFObject *point = [PFObject objectWithoutDataWithClassName:@"Answers" objectId:self.answerID];
         [point incrementKey:@"votes" byAmount:[NSNumber numberWithInt:-1]];
+        
+        PFRelation *user = [point relationForKey:@"likes"];
+        [user removeObject:[PFUser currentUser]];
+        
+        [point saveInBackground];
         self.liked = NO;
     }
     
@@ -47,6 +74,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     
     UIColor *backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.0];
     self.backgroundView = [[UIView alloc]initWithFrame:self.bounds];
@@ -55,6 +83,17 @@
     self.answerLabel.clipsToBounds = YES;
     
     self.liked = NO;
+    
+    NSString *imageNamed = [NSString new];
+
+    if (self.defaultVoteStatus == YES){
+        imageNamed = @"Icon_Dark";
+    } else {
+        imageNamed = @"Icon_Grey";
+    }
+    
+    UIImage *heartState = [UIImage imageNamed:imageNamed];
+    [self.heardButton setImage:heartState forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

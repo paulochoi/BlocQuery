@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Questions.h"
+#import <Parse/Parse.h>
+
 
 @interface Answers : NSObject
 
@@ -15,6 +17,7 @@
 @property (nonatomic, strong) NSString *answer;
 @property (nonatomic, strong) NSNumber* votes;
 @property (nonatomic, strong) NSString *answerID;
+@property (nonatomic, assign) BOOL voted;
 
 
 -(id) initWithParseObject: (PFObject *) parseObject;

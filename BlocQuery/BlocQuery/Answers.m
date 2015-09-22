@@ -16,11 +16,20 @@
         self.answer = parseObject[@"text"];
         self.votes = (NSNumber *)parseObject[@"votes"];
         self.answerID = parseObject.objectId;
-//        
-//        if (self.votes == -5764607523034234733){
-//            self.votes = 0;
-//        }
+        self.voted = NO;
         
+        PFQuery *query = [(PFRelation *)parseObject[@"likes"] query];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            
+            for (PFUser *object in results) {
+                
+                if (object == [PFUser currentUser]) {
+                    self.voted = YES;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"voteFetchComplete" object:self];
+                }
+            }
+        }];
     }
     
     return self;

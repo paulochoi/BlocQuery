@@ -12,7 +12,6 @@
 
 @interface AnswersViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (strong, nonatomic) Questions *question;
 
 @end
